@@ -152,6 +152,6 @@ root.geometry("300x200")
 
 btn = tk.Button(root, text="클릭하세요", command=on_buton_click)
 btn.pack(pady=20)
-
+# 123
 root.mainloop()
 
