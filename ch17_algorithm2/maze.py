@@ -36,11 +36,17 @@ def solve_maze(maze, start):
     visited = []
     stack.append(start)
     while stack:
-        r, c = stack.pop()
+        r, c = stack.pop() # 방문 예정 좌표를 꺼냄
+        """ 방문표시를 이렇게 할 수도 있음
+        if maze[r][c] == 0:
+            maze[r][c] = 2 
+        """
+        
+
         # 방문 리스트에 좌표가 없다면? 좌표 방문처리 및 스택에 인접노드 추가
         if (r,c) not in visited:
             visited.append((r,c))
-            # 상,하,좌,우 탐색(미로 범위 내, 길(0)인 경우만)
+            # 상,하,좌,우 탐색(미로 범위 내, 길(0)인 경우만 방문 예정 스택에 삽입)
             directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
             for dr, dc in directions:
                 nr, nc = r+dr, c+dc
@@ -51,5 +57,14 @@ def solve_maze(maze, start):
     return visited
 
 print(solve_maze(maze, (0,0)))
+
+
+
+
+
+
+
+
+
 
 
